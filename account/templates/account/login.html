@@ -1,0 +1,23 @@
+<form method="POST" action="">
+
+    <div class="container">
+        <h1>Login</h1>
+        <hr>
+        {% csrf_token %}
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter username" name="username" required><br>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+        <button type="submit" class="passBtn">Login</button><br>
+    </div>
+
+    {% for message in messages %}
+    <p> {{ message }} </p>
+    {% endfor %}
+
+    <div class="container signin">
+        <p>Don't have an account? <a href="{% url 'register' %}">Register</a>.</p>
+    </div>
+</form>
+</form>
